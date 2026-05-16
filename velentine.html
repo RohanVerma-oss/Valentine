@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Valentine 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    height:100vh;
+    overflow:hidden;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-family:'Baloo 2', cursive;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ff9ebb,
+        #ffd6e0,
+        #fff0f5
+    );
+
+    position:relative;
+}
+
+/* BACKGROUND DECORATIONS */
+
+.decor{
+
+    position:absolute;
+    pointer-events:none;
+    animation:float 4s ease-in-out infinite;
+    opacity:0.9;
+}
+
+.decor1{
+    top:50px;
+    left:60px;
+    font-size:70px;
+}
+
+.decor2{
+    top:90px;
+    right:90px;
+    font-size:65px;
+    animation-delay:1s;
+}
+
+.decor3{
+    bottom:60px;
+    left:100px;
+    font-size:75px;
+    animation-delay:2s;
+}
+
+.decor4{
+    bottom:70px;
+    right:100px;
+    font-size:75px;
+    animation-delay:1.5s;
+}
+
+.decor5{
+    top:40%;
+    left:5%;
+    font-size:55px;
+}
+
+.decor6{
+    top:40%;
+    right:5%;
+    font-size:55px;
+    animation-delay:2.2s;
+}
+
+@keyframes float{
+
+    0%,100%{
+        transform:translateY(0px) rotate(0deg);
+    }
+
+    50%{
+        transform:translateY(-15px) rotate(6deg);
+    }
+}
+
+/* HEARTS */
+
+.hearts{
+
+    position:absolute;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    pointer-events:none;
+}
+
+.heart{
+
+    position:absolute;
+    bottom:-40px;
+
+    animation:heartFloat linear forwards;
+
+    opacity:0.85;
+}
+
+@keyframes heartFloat{
+
+    0%{
+        transform:translateY(0) scale(0.5);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-120vh) scale(1.5);
+        opacity:0;
+    }
+}
+
+/* CARD */
+
+.container{
+
+    width:90%;
+    max-width:720px;
+
+    background:rgba(255,255,255,0.25);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:42px;
+
+    padding:65px 40px;
+
+    text-align:center;
+
+    position:relative;
+
+    border:2px solid rgba(255,255,255,0.4);
+
+    box-shadow:
+        0 15px 40px rgba(255,105,180,0.25),
+        inset 0 0 20px rgba(255,255,255,0.3);
+
+    animation:cardPop 0.8s ease;
+}
+
+@keyframes cardPop{
+
+    from{
+        opacity:0;
+        transform:scale(0.8);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/* TITLE */
+
+h1{
+
+    font-family:'Pacifico', cursive;
+
+    color:#ff2e63;
+
+    font-size:4.3rem;
+
+    line-height:1.35;
+
+    margin-bottom:60px;
+
+    text-shadow:
+        0 0 10px rgba(255,255,255,0.9),
+        0 0 25px rgba(255,105,180,0.45);
+
+    animation:pulse 2s infinite alternate;
+}
+
+@keyframes pulse{
+
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.03);
+    }
+}
+
+/* BUTTON AREA */
+
+.buttons{
+
+    width:100%;
+    height:320px;
+
+    position:relative;
+}
+
+/* BUTTONS */
+
+button{
+
+    border:none;
+    outline:none;
+
+    position:absolute;
+
+    border-radius:999px;
+
+    padding:18px 46px;
+
+    font-size:1.5rem;
+
+    font-weight:700;
+
+    font-family:'Baloo 2', cursive;
+
+    cursor:pointer;
+
+    transition:0.2s ease;
+
+    user-select:none;
+}
+
+/* YES BUTTON */
+
+#yesBtn{
+
+    left:18%;
+    top:110px;
+
+    color:white;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ff4f8b,
+        #ff80ab
+    );
+
+    box-shadow:
+        0 10px 25px rgba(255,79,139,0.45),
+        inset 0 3px 10px rgba(255,255,255,0.4);
+
+    animation:yesBounce 2s infinite;
+}
+
+@keyframes yesBounce{
+
+    0%,100%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+#yesBtn:hover{
+
+    transform:scale(1.12);
+}
+
+/* NO BUTTON */
+
+#noBtn{
+
+    left:64%;
+    top:110px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #fff5f8,
+        #ffe3ec
+    );
+
+    color:#ff2e63;
+
+    box-shadow:
+        0 10px 25px rgba(255,255,255,0.9),
+        inset 0 3px 8px rgba(255,255,255,1);
+}
+
+/* SECOND PAGE */
+
+.secondPage{
+
+    display:none;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    animation:fadeIn 1s ease;
+}
+
+.secondPage h2{
+
+    font-family:'Pacifico', cursive;
+
+    color:#ff2e63;
+
+    font-size:4rem;
+
+    margin-bottom:20px;
+}
+
+.secondPage p{
+
+    font-size:2rem;
+
+    color:#ff5c8a;
+
+    margin-bottom:35px;
+
+    font-weight:700;
+}
+
+/* BACK BUTTON */
+
+#backBtn{
+
+    position:relative;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ff4f8b,
+        #ff80ab
+    );
+
+    color:white;
+
+    box-shadow:
+        0 10px 25px rgba(255,79,139,0.4);
+}
+
+#backBtn:hover{
+
+    transform:scale(1.08);
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:scale(0.8);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- CUTE DECOR -->
+
+<div class="decor decor1">🎀</div>
+<div class="decor decor2">🩷</div>
+<div class="decor decor3">🌸</div>
+<div class="decor decor4">🍓</div>
+<div class="decor decor5">✨</div>
+<div class="decor decor6">💞</div>
+
+<!-- FLOATING HEARTS -->
+
+<div class="hearts"></div>
+
+<!-- PAGE 1 -->
+
+<div class="container" id="firstPage">
+
+    <h1>Will u be my Valentine? 💖</h1>
+
+    <div class="buttons">
+
+        <button id="yesBtn">
+            Yes 💕
+        </button>
+
+        <button id="noBtn">
+            No 😭
+        </button>
+
+    </div>
+
+</div>
+
+<!-- PAGE 2 -->
+
+<div class="container secondPage" id="secondPage">
+
+    <h2>Ik u wont say no 💖</h2>
+
+    <p>Now you're officially my Valentine ✨💕</p>
+
+    <button id="backBtn">
+        ← Back 💌
+    </button>
+
+</div>
+
+<script>
+
+const noBtn = document.getElementById("noBtn");
+
+const yesBtn = document.getElementById("yesBtn");
+
+const firstPage = document.getElementById("firstPage");
+
+const secondPage = document.getElementById("secondPage");
+
+const backBtn = document.getElementById("backBtn");
+
+const buttons = document.querySelector(".buttons");
+
+/* ULTRA ESCAPE SYSTEM */
+
+function moveNoButton(mouseX, mouseY){
+
+    const area = buttons.getBoundingClientRect();
+
+    const btnRect = noBtn.getBoundingClientRect();
+
+    const btnCenterX =
+        btnRect.left + btnRect.width / 2;
+
+    const btnCenterY =
+        btnRect.top + btnRect.height / 2;
+
+    /* Direction away from mouse */
+
+    let dx = btnCenterX - mouseX;
+    let dy = btnCenterY - mouseY;
+
+    let distance =
+        Math.sqrt(dx * dx + dy * dy);
+
+    /* Avoid divide by zero */
+
+    if(distance < 1){
+        distance = 1;
+    }
+
+    dx /= distance;
+    dy /= distance;
+
+    /* MASSIVE PUSH */
+
+    let push = 260;
+
+    let newX =
+        noBtn.offsetLeft + dx * push;
+
+    let newY =
+        noBtn.offsetTop + dy * push;
+
+    /* Random extra jump */
+
+    newX += (Math.random() - 0.5) * 120;
+    newY += (Math.random() - 0.5) * 120;
+
+    /* Boundaries */
+
+    const maxX =
+        buttons.clientWidth - noBtn.offsetWidth;
+
+    const maxY =
+        buttons.clientHeight - noBtn.offsetHeight;
+
+    if(newX < 0) newX = 0;
+    if(newY < 0) newY = 0;
+
+    if(newX > maxX) newX = maxX;
+    if(newY > maxY) newY = maxY;
+
+    noBtn.style.left = newX + "px";
+    noBtn.style.top = newY + "px";
+}
+
+/* EXTREME SENSITIVITY */
+
+document.addEventListener("mousemove", (e)=>{
+
+    const rect = noBtn.getBoundingClientRect();
+
+    const centerX =
+        rect.left + rect.width / 2;
+
+    const centerY =
+        rect.top + rect.height / 2;
+
+    const distance = Math.sqrt(
+
+        Math.pow(e.clientX - centerX, 2) +
+        Math.pow(e.clientY - centerY, 2)
+    );
+
+    /* HUGE DETECTION RANGE */
+
+    if(distance < 420){
+
+        moveNoButton(
+            e.clientX,
+            e.clientY
+        );
+    }
+});
+
+/* EXTRA IMPOSSIBLE TO TOUCH */
+
+setInterval(()=>{
+
+    const rect = noBtn.getBoundingClientRect();
+
+    if(
+        rect.left < 0 ||
+        rect.top < 0
+    ){
+        noBtn.style.left = "60%";
+        noBtn.style.top = "110px";
+    }
+
+},100);
+
+/* MOBILE */
+
+document.addEventListener("touchstart", ()=>{
+
+    const randomX =
+        Math.random() *
+        (buttons.clientWidth - noBtn.offsetWidth);
+
+    const randomY =
+        Math.random() *
+        (buttons.clientHeight - noBtn.offsetHeight);
+
+    noBtn.style.left = randomX + "px";
+    noBtn.style.top = randomY + "px";
+});
+
+/* EXTRA EVENTS */
+
+["mouseenter","mouseover","mousedown","mouseup","click"]
+.forEach(eventType=>{
+
+    noBtn.addEventListener(eventType, (e)=>{
+
+        e.preventDefault();
+
+        moveNoButton(
+            e.clientX || 0,
+            e.clientY || 0
+        );
+    });
+});
+
+/* YES BUTTON */
+
+yesBtn.addEventListener("click", ()=>{
+
+    firstPage.style.display = "none";
+
+    secondPage.style.display = "flex";
+});
+
+/* BACK BUTTON */
+
+backBtn.addEventListener("click", ()=>{
+
+    secondPage.style.display = "none";
+
+    firstPage.style.display = "block";
+});
+
+/* FLOATING HEARTS */
+
+const heartsContainer =
+    document.querySelector(".hearts");
+
+function createHeart(){
+
+    const heart =
+        document.createElement("div");
+
+    heart.classList.add("heart");
+
+    const hearts =
+    ["💖","💕","💗","💘","💝","💞"];
+
+    heart.innerHTML =
+        hearts[Math.floor(
+            Math.random() * hearts.length
+        )];
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+    heart.style.fontSize =
+        (Math.random() * 24 + 18) + "px";
+
+    heart.style.animationDuration =
+        (Math.random() * 3 + 4) + "s";
+
+    heartsContainer.appendChild(heart);
+
+    setTimeout(()=>{
+
+        heart.remove();
+
+    },7000);
+}
+
+setInterval(createHeart, 180);
+
+</script>
+
+</body>
+</html>
